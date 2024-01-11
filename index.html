@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ahsan Animals</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="./js/custom.js"></script> -->
+     <link href="./css/stylesheet.css"></link> 
+  </head>
+  <body>
+    <div class="container-fluid" id="main-container"></div>
+    <script>
+      // Function for Playing audio.
+      // pass the url of audio as audio_value
+      function play(audio_url) {
+        let audio_voice = new Audio(audio_url);
+        audio_voice.play();
+      }
+
+      let rowDiv = "";
+      function createRowElement() {
+        // Create the main div with class "row" and "bg-primary"
+        rowDiv = document.createElement("div");
+        rowDiv.className = "row bg-primary";
+        let main_container=document.getElementById("main-container");
+        main_container.appendChild(rowDiv);
+      }
+
+      function createColElement(specie_name) {
+        // Create the div with class "col-lg-4"
+        const colDiv = document.createElement("div");
+        colDiv.className = "col-lg-4";
+
+        //create container for buttons.
+
+        const button_container=document.createElement("div");
+        button_container.className = "row";
+
+        // Create the button with class "btn btn-info" and onclick attribute
+        const button_pashto = document.createElement("div");
+        button_pashto.className = "btn btn-warning mt-3 mb-3 col-4 mx-auto";
+        const specie_name_scase =
+          specie_name.charAt(0).toUpperCase() + specie_name.slice(1);
+          button_pashto.textContent = specie_name_scase;
+          button_pashto.onclick = function () {
+          // Replace with your onclick logic
+          play(pashto_audio.src);
+        };
+
+        // Button For English
+
+                // Create the button with class "btn btn-info" and onclick attribute
+        const button_english = document.createElement("div");
+        button_english.className = "btn btn-success mt-3 mb-3 col-4 mx-auto";
+        //const specie_name_scase =
+        //  specie_name.charAt(0).toUpperCase() + specie_name.slice(1);
+        button_english.textContent = specie_name_scase;
+        button_english.onclick = function () {
+          // Replace with your onclick logic
+          play(english_audio.src);
+        };
+
+        // Create the image element with src, class, and onclick attribute
+        const image = document.createElement("img");
+        image.src = "./images/" + specie_name + ".png"; // Replace with your image path
+        image.className = "img-thumbnail mb-3 img-fluid";
+        image.alt = specie_name_scase;
+        image.onclick = function () {
+          // Replace with your onclick logic
+          play(audioElement1.src);
+        };
+
+        // Create the audio elements with id and src attributes
+        const audioElement1 = document.createElement("audio");
+        audioElement1.id = "specie_name"; // Replace with your audio id
+        audioElement1.src = "./audio/own/" + specie_name + ".mp3"; // Replace with your audio source path
+
+        const pashto_audio = document.createElement("audio");
+        pashto_audio.id = specie_name + "_pashto"; // Replace with your audio id
+        pashto_audio.src = "./audio/pashto/" + specie_name + ".wav"; // Replace with your audio source path
+
+        const english_audio = document.createElement("audio");
+        english_audio.id = specie_name + "_english"; // Replace with your audio id
+        english_audio.src = "./audio/english/" + specie_name + ".mp3"; // Replace with your audio source path
+
+        // Append the elements
+
+        // button container
+        colDiv.appendChild(button_container);
+
+        // First button Pashto
+        button_container.appendChild(button_pashto);
+        // Second button English
+        button_container.appendChild(button_english);
+        // Animal image to 
+        colDiv.appendChild(image);
+
+        colDiv.appendChild(audioElement1);
+        
+        // pashto audio to  pashto button
+        button_pashto.appendChild(pashto_audio);
+
+        // english audio to english button
+        button_english.appendChild(english_audio);
+
+        // Append colDiv to the document or another parent element
+
+        rowDiv.appendChild(colDiv);
+      }
+
+      // Call the function to create the elements
+      createRowElement();
+        createColElement("bat");
+        createColElement("bear");
+        createColElement("buffalo");
+      createRowElement();
+        createColElement("bulbul");
+        createColElement("camel");
+        createColElement("cat");
+      createRowElement();
+        createColElement("cow");
+        createColElement("crocodile");
+        createColElement("crow");
+        createRowElement();
+        createColElement("deer");
+        createColElement("dog");
+        createColElement("donkey");
+        createRowElement();
+        createColElement("duck");
+        createColElement("eagle");
+        createColElement("elephant");
+        createRowElement();
+        createColElement("fish");
+        createColElement("goat");
+        createColElement("hen");
+        createRowElement();
+        createColElement("horse");
+        createColElement("kangaroo");
+        createColElement("lion");
+        createRowElement();
+        createColElement("lizard");
+        createColElement("markhor");
+        createColElement("mongoose");
+        createRowElement();
+        createColElement("monkey");
+        createColElement("myna");
+        createColElement("ostrich");
+      createRowElement();
+        createColElement("owl");
+        createColElement("panda");
+        createColElement("parrot");
+      createRowElement();
+        createColElement("penguin");
+        createColElement("pigeon");
+        createColElement("rabbit");
+        createRowElement();
+        createColElement("rat");
+        createColElement("rooster");
+        createColElement("sheep");
+        createRowElement();
+        createColElement("snake");
+        createColElement("sparrow");
+        createColElement("squirrel");
+        createRowElement();
+        createColElement("swallow");
+        createColElement("tiger");
+        createColElement("tortoise");
+        createRowElement();
+        createColElement("wolf");
+
+    </script>
+  </body>
+</html>
